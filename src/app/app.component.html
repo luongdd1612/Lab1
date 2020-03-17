@@ -35,7 +35,7 @@
           [value]="customBv.catuvong">
       </div>
       <div class="text-center">
-        <button (click)="saveBV()" class="btn btn-sm btn-success">Lưu</button> &nbsp;
+        <button (click)="saveBV()" class="btn btn-sm btn-primary">Lưu</button> &nbsp;
         <button (click)="cancel()" class="btn btn-sm btn-success">Huỷ</button>
       </div>
     </div>
@@ -66,8 +66,8 @@
         <td>{{bv.catuvong}}</td>
         <td><img [src]="bv.img" width="70px"></td>
         <td>
-          <button (click)="updateBV(bv)" class="btn btn-sm btn-danger">Sửa</button> &nbsp;
-          <button (click)="removeBV(bv)" class="btn btn-sm btn-danger">Xoá</button>
+          <button (click)="updateBV(bv)" class="btn btn-sm btn-warning">Sửa</button> &nbsp;
+          <button (click)="removeBV(bv)" class="btn btn-sm btn-dark">Xoá</button>
         </td>
       </tr>
     </tbody>
