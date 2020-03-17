@@ -1,0 +1,75 @@
+<div class="container-fluid" style="border: 1px solid;">
+  <!-- {{customBv|json}} -->
+  <div class="row">
+    <div class="col-6 offset-3">
+      <div class="form-group">
+        <label for="">Tên Bệnh Viện</label>
+        <input type="text" (keyup)="customBv.name = $event.target.value" class="form-control" [value]="customBv.name">
+      </div>
+      <div class="form-group">
+        <label for="">Ảnh Bệnh Viện</label>
+        <input (keyup)="customBv.img = $event.target.value" type="text" class="form-control" [value]="customBv.img">
+      </div>
+      <div class="form-group">
+        <label for="">Giám Đốc</label>
+        <input type="text" (keyup)="customBv.address = $event.target.value" class="form-control"
+          [value]="customBv.address">
+      </div>
+      <div class="form-group">
+        <label for="">Địa chỉ</label>
+        <input type="text" (keyup)="customBv.address = $event.target.value" class="form-control" [value]="customBv.address">
+      </div>
+      <div class="form-group">
+        <label for="">Số ca nhiễm</label>
+        <input type="text" (keyup)="customBv.canhiem = $event.target.value" class="form-control"
+          [value]="customBv.canhiem">
+      </div>
+      <div class="form-group">
+        <label for="">Số ca khỏi</label>
+        <input type="text" (keyup)="customBv.cakhoi = $event.target.value" class="form-control"
+          [value]="customBv.cakhoi">
+      </div>
+      <div class="form-group">
+        <label for="">Số ca tử vong</label>
+        <input type="text" (keyup)="customBv.catuvong = $event.target.value" class="form-control"
+          [value]="customBv.catuvong">
+      </div>
+      <div class="text-center">
+        <button (click)="saveBV()" class="btn btn-sm btn-success">Lưu</button> &nbsp;
+        <button (click)="cancel()" class="btn btn-sm btn-success">Huỷ</button>
+      </div>
+    </div>
+  </div>
+<h3>{{title}}</h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tên Bệnh viện</th>
+        <th scope="col">Giám đốc</th>
+        <th scope="col">Địa chỉ</th>
+        <th scope="col">Số ca nhiễm</th>
+        <th scope="col">Số ca khỏi</th>
+        <th scope="col">Số ca tử vong</th>
+        <th scope="col">Ảnh bệnh viện</th>
+        <th scope="col">Hành động</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bv of benhvien">
+        <td>{{bv.id}}</td>
+        <td>{{bv.name}}</td>
+        <td>{{bv.GD}}</td>
+        <td>{{bv.address}}</td>
+        <td>{{bv.canhiem}}</td>
+        <td>{{bv.cakhoi}}</td>
+        <td>{{bv.catuvong}}</td>
+        <td><img [src]="bv.img" width="70px"></td>
+        <td>
+          <button (click)="updateBV(bv)" class="btn btn-sm btn-danger">Sửa</button> &nbsp;
+          <button (click)="removeBV(bv)" class="btn btn-sm btn-danger">Xoá</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
